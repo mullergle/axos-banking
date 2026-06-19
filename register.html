@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>Register | Axos</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:-apple-system,BlinkMacSystemFont,
+    "SF Pro Display",
+    "Helvetica Neue",
+    Arial,sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#03122d,#07204b,#0d3475);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    overflow-y:auto;
+    padding:30px 0;
+}
+
+/* glow */
+body::before{
+    content:'';
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#1d6fff20;
+    border-radius:50%;
+    top:-250px;
+    right:-250px;
+    filter:blur(120px);
+    z-index:-1;
+}
+
+body::after{
+    content:'';
+    position:fixed;
+    width:450px;
+    height:450px;
+    background:#00c6ff15;
+    border-radius:50%;
+    bottom:-220px;
+    left:-220px;
+    filter:blur(120px);
+    z-index:-1;
+}
+
+/* container */
+.box{
+    width:92%;
+    max-width:500px;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.1);
+    backdrop-filter:blur(25px);
+    border-radius:25px;
+    padding:28px 22px;
+    position:relative;
+}
+
+/* X button */
+.close-btn{
+    position:absolute;
+    top:15px;
+    right:15px;
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.15);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    color:white;
+    font-size:22px;
+}
+
+h1{
+    text-align:center;
+    font-size:28px;
+    font-weight:400;
+    margin-top:10px;
+}
+
+p{
+    text-align:center;
+    color:#b7caeb;
+    font-size:13px;
+    margin-bottom:15px;
+}
+
+/* inputs */
+input{
+    width:100%;
+    padding:12px;
+    margin-bottom:10px;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,.15);
+    background:rgba(0,0,0,.2);
+    color:white;
+    outline:none;
+}
+
+input::placeholder{
+    color:#b7caeb;
+}
+
+/* checkbox */
+.agree{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    margin-top:10px;
+    margin-bottom:10px;
+    font-size:12px;
+    color:#b7caeb;
+}
+
+.agree input{
+    width:16px;
+    height:16px;
+    margin-top:2px;
+}
+
+/* button */
+button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    background:#1d6fff;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+/* error */
+#error{
+    display:none;
+    color:#ff7b7b;
+    font-size:13px;
+    margin-top:10px;
+    text-align:center;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <a href="dashboard.html" class="close-btn">×</a>
+
+    <h1>Create Account</h1>
+    <p>Complete your banking registration</p>
+
+    <input type="text" id="fname" placeholder="First Name">
+    <input type="text" id="sname" placeholder="Surname">
+    <input type="text" id="lname" placeholder="Last Name">
+
+    <input type="email" id="email" placeholder="Email Address">
+
+    <input type="password" id="pass" placeholder="Password">
+    <input type="password" id="cpass" placeholder="Confirm Password">
+
+    <input type="text" id="ssn" placeholder="SSN Number">
+    <input type="tel" id="phone" placeholder="Phone Number">
+
+    <input type="text" id="country" placeholder="Country">
+    <input type="text" id="state" placeholder="State">
+    <input type="text" id="city" placeholder="City">
+
+    <input type="text" id="address" placeholder="House Address">
+
+    <div class="agree">
+        <input type="checkbox" id="terms">
+        <label for="terms">I agree to Terms & Conditions</label>
+    </div>
+
+    <button onclick="register()">Register</button>
+
+    <div id="error"></div>
+
+</div>
+
+<script>
+
+function register(){
+
+    let fields = [
+        "fname","sname","lname","email",
+        "pass","cpass","ssn","phone",
+        "country","state","city","address"
+    ];
+
+    let error = document.getElementById("error");
+    let terms = document.getElementById("terms").checked;
+
+    // check empty fields
+    for(let id of fields){
+        if(document.getElementById(id).value.trim() === ""){
+            error.innerText = "❌ Please fill all fields";
+            error.style.display = "block";
+            return;
+        }
+    }
+
+    // check password match
+    if(document.getElementById("pass").value !== document.getElementById("cpass").value){
+        error.innerText = "❌ Passwords do not match";
+        error.style.display = "block";
+        return;
+    }
+
+    // check terms
+    if(!terms){
+        error.innerText = "❌ You must accept Terms & Conditions";
+        error.style.display = "block";
+        return;
+    }
+
+    // success
+    error.style.display = "none";
+    alert("Registration successful (demo)");
+
+}
+
+</script>
+
+</body>
+</html>

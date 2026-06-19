@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard | Axos</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:-apple-system,BlinkMacSystemFont,
+    "SF Pro Display",
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#03122d,#07204b,#0d3475);
+    min-height:100vh;
+    color:white;
+}
+
+body::before{
+    content:'';
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:rgba(29,111,255,.15);
+    border-radius:50%;
+    top:-200px;
+    right:-200px;
+    filter:blur(120px);
+    z-index:-1;
+}
+
+body::after{
+    content:'';
+    position:fixed;
+    width:450px;
+    height:450px;
+    background:rgba(0,212,255,.12);
+    border-radius:50%;
+    bottom:-180px;
+    left:-180px;
+    filter:blur(120px);
+    z-index:-1;
+}
+
+/* Header */
+
+.header{
+    padding:30px 7%;
+    display:flex;
+    justify-content:flex-end;
+}
+
+.notification{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:rgba(255,255,255,.06);
+    backdrop-filter:blur(20px);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:22px;
+    border:1px solid rgba(255,255,255,.1);
+}
+
+/* Greeting */
+
+.greeting{
+    padding:0 7%;
+}
+
+.greeting p{
+    color:#d8e3f2;
+    font-size:22px;
+    font-weight:300;
+}
+
+.greeting h1{
+    margin-top:10px;
+    font-size:60px;
+    font-weight:400;
+    letter-spacing:-2px;
+}
+
+.reward{
+    margin-top:12px;
+    color:#84c3ff;
+    font-size:20px;
+}
+
+/* Cards */
+
+.cards{
+    width:92%;
+    max-width:900px;
+    margin:35px auto;
+}
+
+.card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(25px);
+    border-radius:28px;
+    padding:30px;
+    margin-bottom:25px;
+}
+
+.card-title{
+    font-size:18px;
+    font-weight:600;
+    color:#d9e6ff;
+}
+
+.balance{
+    margin-top:20px;
+    font-size:55px;
+    font-weight:300;
+    letter-spacing:-2px;
+}
+
+.status{
+    margin-top:10px;
+    color:#9eb5dc;
+    font-size:18px;
+}
+
+/* Button */
+
+.account-btn{
+    width:280px;
+    height:65px;
+    margin:20px auto 40px;
+    border-radius:50px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(45deg,#1d6fff,#00c6ff);
+    color:white;
+    text-decoration:none;
+    font-size:20px;
+    font-weight:500;
+    box-shadow:0 15px 30px rgba(0,102,255,.3);
+}
+
+/* Credit Box */
+
+.credit-box{
+    width:92%;
+    max-width:900px;
+    margin:auto;
+    padding:28px;
+    border-radius:28px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(25px);
+}
+
+.credit-box h2{
+    font-size:28px;
+    font-weight:400;
+}
+
+.credit-box p{
+    margin-top:12px;
+    line-height:1.7;
+    color:#d6e3ff;
+}
+
+/* Bottom Nav */
+
+.bottom-nav{
+    position:fixed;
+    bottom:15px;
+    left:50%;
+    transform:translateX(-50%);
+    width:92%;
+    max-width:700px;
+    height:80px;
+
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(30px);
+
+    border-radius:30px;
+    border:1px solid rgba(255,255,255,.08);
+
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+}
+
+.bottom-nav a{
+    text-decoration:none;
+    color:white;
+    font-size:15px;
+    font-weight:400;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.greeting h1{
+    font-size:48px;
+}
+
+.balance{
+    font-size:42px;
+}
+
+.card{
+    padding:25px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="header">
+
+
+
+</div>
+
+
+<div class="greeting">
+
+<p id="greetingText">Good Afternoon,</p>
+
+<h1>Ben Winans</h1>
+
+<div class="reward">
+Axos Rewards® • $27.70 cash rewards
+</div>
+
+</div>
+
+
+<div class="cards">
+
+<div class="card">
+
+<div class="card-title">
+EVERYDAY CHECKING •••8084
+</div>
+
+<div class="balance">
+$1,534,367.53
+</div>
+
+<div class="status">
+Available balance
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-title">
+HIGH-YIELD SAVINGS •••5994
+</div>
+
+<div class="balance">
+$2,324,546.43
+
+</div>
+
+<div class="status">
+Available balance
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-title">
+PLATINUM CARD •••0640
+</div>
+
+<div class="balance">
+$209.75
+</div>
+
+<div class="status">
+Outstanding balance
+</div>
+
+</div>
+
+</div>
+
+
+<a href="register.html" class="account-btn">
+Open a new account
+</a>
+
+
+<div class="credit-box">
+
+<h2>
+Monitor Your FICO® Score
+</h2>
+
+<p>
+Stay on top of your credit health with real-time monitoring and personalized financial insights designed to help you build a stronger future.
+</p>
+
+</div>
+
+
+<div class="bottom-nav">
+
+
+
+<a href="deposit.html">Deposit</a>
+
+<a href="transfer.html">Transfer</a>
+
+<a href="account.html">Account</a>
+
+<a href="explore.html">Explore</a>
+
+<a href="menu.html">Menu</a>
+
+</div>
+
+<script>
+function updateGreeting() {
+    let hour = new Date().getHours();
+    let greeting = "";
+
+    if (hour < 12) {
+        greeting = "Good Morning,";
+    } 
+    else if (hour < 18) {
+        greeting = "Good Afternoon,";
+    } 
+    else {
+        greeting = "Good Evening,";
+    }
+
+    document.getElementById("greetingText").innerText = greeting;
+}
+
+updateGreeting();
+</script>
+
+</body>
+</html>

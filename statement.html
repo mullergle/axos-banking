@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Statements | Axos</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:-apple-system,BlinkMacSystemFont,
+    "SF Pro Display",
+    "Helvetica Neue",
+    Arial,sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#03122d,#07204b,#0d3475);
+    color:white;
+    min-height:100vh;
+}
+
+body::before, body::after{
+    content:'';
+    position:fixed;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    filter:blur(120px);
+    z-index:-1;
+}
+
+body::before{ background:#1d6fff20; top:-250px; right:-250px; }
+body::after{ background:#00c6ff15; bottom:-220px; left:-220px; }
+
+.header{
+    padding:40px 8%;
+    position:relative;
+}
+
+.header h1{
+    font-size:45px;
+    font-weight:400;
+}
+
+.header p{
+    margin-top:8px;
+    color:#b6c9ea;
+}
+
+.close-btn{
+    position:absolute;
+    top:40px;
+    right:8%;
+    width:50px;
+    height:50px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    color:white;
+    font-size:32px;
+}
+
+.container{
+    width:92%;
+    max-width:900px;
+    margin:auto;
+    margin-top:40px;
+}
+
+.card{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.1);
+    backdrop-filter:blur(25px);
+    border-radius:25px;
+    padding:25px;
+}
+
+.row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 18px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:15px;
+    margin-bottom:12px;
+}
+
+.left{
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+}
+
+.title{ font-size:15px; font-weight:500; }
+.date{ font-size:12px; color:#b7caeb; }
+
+.amount{ font-weight:600; }
+.credit{ color:#4dff88; }
+.debit{ color:#ff6b6b; }
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <a href="menu.html" class="close-btn">×</a>
+    <h1>Statements</h1>
+    <p>Account History</p>
+</div>
+
+<div class="container">
+<div class="card">
+    <div id="list"></div>
+</div>
+</div>
+
+<script>
+
+const KEY = "axos_statements_132";
+
+const types = [
+    "Card Payment",
+    "Online Transfer",
+    "ATM Withdrawal",
+    "Electricity Bill",
+    "Mobile Airtime",
+    "Netflix Subscription",
+    "Amazon Purchase",
+    "Restaurant Payment",
+    "Fuel Purchase",
+    "Service Charge",
+    "Refund",
+    "Bank Transfer",
+    "Freelance Payment",
+    "Subscription Fee",
+    "POS Payment"
+];
+
+// date starts NOW and goes backwards
+let currentDate = new Date();
+
+// 💵 1–2600 only
+function randomAmount(){
+    return Math.floor(Math.random() * 2600) + 1;
+}
+
+// 💼 rare salary
+function isSalary(){
+    return Math.random() < 0.04;
+}
+
+function formatDate(d){
+    return `${d.getDate()}/${d.getMonth()+1}/${d.getFullYear()}`;
+}
+
+// 👉 BUILD DATA ONLY ONCE
+function generateData(){
+
+    let data = [];
+    let date = new Date();
+
+    for(let i=0; i<132; i++){
+
+        let type = types[Math.floor(Math.random()*types.length)];
+
+        let salary = isSalary();
+        let amount = salary ? 50000 : randomAmount();
+
+        let isCredit =
+            salary ||
+            type.includes("Refund") ||
+            type.includes("Bank Transfer") ||
+            Math.random() > 0.6;
+
+        data.push({
+            type: salary ? "Salary Deposit" : type,
+            amount,
+            credit: isCredit,
+            date: formatDate(date)
+        });
+
+        // go backward realistically
+        date.setDate(date.getDate() - (Math.floor(Math.random()*8)+1));
+    }
+
+    return data;
+}
+
+function render(data){
+
+    let list = document.getElementById("list");
+
+    data.forEach(t => {
+
+        let div = document.createElement("div");
+        div.className = "row";
+
+        div.innerHTML = `
+            <div class="left">
+                <div class="title">${t.type}</div>
+                <div class="date">${t.date}</div>
+            </div>
+            <div class="amount ${t.credit ? 'credit' : 'debit'}">
+                ${t.credit ? '+' : '-'}$${t.amount.toLocaleString()}
+            </div>
+        `;
+
+        list.appendChild(div);
+    });
+}
+
+// 👉 LOAD OR SAVE (THIS MAKES IT STABLE)
+let saved = localStorage.getItem(KEY);
+
+if(!saved){
+    let data = generateData();
+    localStorage.setItem(KEY, JSON.stringify(data));
+    render(data);
+} else {
+    render(JSON.parse(saved));
+}
+
+</script>
+
+</body>
+</html>

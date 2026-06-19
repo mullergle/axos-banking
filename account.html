@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Account | Axos</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:-apple-system,BlinkMacSystemFont,
+"SF Pro Display",
+"Helvetica Neue",
+Arial,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#03122d,#07204b,#0d3475);
+color:white;
+min-height:100vh;
+}
+
+/* Glow */
+body::before{
+content:'';
+position:fixed;
+width:500px;
+height:500px;
+background:#1d6fff20;
+border-radius:50%;
+top:-250px;
+right:-250px;
+filter:blur(120px);
+z-index:-1;
+}
+
+body::after{
+content:'';
+position:fixed;
+width:450px;
+height:450px;
+background:#00c6ff15;
+border-radius:50%;
+bottom:-220px;
+left:-220px;
+filter:blur(120px);
+z-index:-1;
+}
+
+/* Header */
+.header{
+padding:40px 8%;
+position:relative;
+}
+
+.header h1{
+font-size:45px;
+font-weight:400;
+letter-spacing:-1px;
+}
+
+.header p{
+margin-top:8px;
+color:#b6c9ea;
+}
+
+/* X Button */
+.close-btn{
+position:absolute;
+top:40px;
+right:8%;
+
+width:50px;
+height:50px;
+
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.1);
+backdrop-filter:blur(20px);
+border-radius:50%;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+text-decoration:none;
+color:white;
+font-size:32px;
+
+transition:.4s;
+}
+
+.close-btn:hover{
+transform:rotate(90deg);
+}
+
+/* Container */
+.container{
+width:92%;
+max-width:900px;
+margin:auto;
+margin-top:40px;
+}
+
+/* Card */
+.card{
+background:rgba(255,255,255,.06);
+border:1px solid rgba(255,255,255,.1);
+backdrop-filter:blur(25px);
+border-radius:25px;
+padding:25px;
+box-shadow:0 20px 50px rgba(0,0,0,.3);
+margin-bottom:25px;
+}
+
+/* Section title */
+.section-title{
+font-size:14px;
+color:#b7caeb;
+margin-bottom:15px;
+letter-spacing:1px;
+}
+
+/* Row */
+.row{
+display:flex;
+justify-content:space-between;
+padding:15px 18px;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+border-radius:15px;
+margin-bottom:12px;
+}
+
+.label{
+color:#b7caeb;
+font-size:14px;
+}
+
+.value{
+font-weight:500;
+color:white;
+letter-spacing:1px;
+word-break:break-all;
+}
+
+/* badge */
+.badge{
+margin-bottom:25px;
+padding:18px;
+border-radius:15px;
+background:rgba(29,111,255,.10);
+border:1px solid rgba(29,111,255,.25);
+color:#b9d6ff;
+text-align:center;
+font-size:14px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+
+<a href="dashboard.html" class="close-btn">×</a>
+
+<h1>Account Details</h1>
+<p>Your banking identifiers and account information</p>
+
+</div>
+
+<div class="container">
+
+<!-- ACCOUNT 1 -->
+<div class="card">
+
+<div class="badge">🏦 EVERYDAY CHECKING</div>
+
+<div class="section-title">DETAILS</div>
+
+<div class="row"><span class="label">Account Holder</span><span class="value">Ben Winans</span></div>
+<div class="row"><span class="label">Account Number</span><span class="value">607495268084</span></div>
+<div class="row"><span class="label">Routing Number</span><span class="value">987654321</span></div>
+<div class="row"><span class="label">Bank Name</span><span class="value">Axos Digital Bank</span></div>
+<div class="row"><span class="label">Country</span><span class="value">United States</span></div>
+
+</div>
+
+<!-- ACCOUNT 2 -->
+<div class="card">
+
+<div class="badge">💳 HIGH-YIELD SAVINGS</div>
+
+<div class="section-title">DETAILS</div>
+
+<div class="row"><span class="label">Account Holder</span><span class="value">Ben Winans</span></div>
+<div class="row"><span class="label">Account Number</span><span class="value">401882195994</span></div>
+<div class="row"><span class="label">Routing Number</span><span class="value">495392604</span></div>
+<div class="row"><span class="label">Bank Name</span><span class="value">Axos Digital Bank</span></div>
+<div class="row"><span class="label">Country</span><span class="value">United States</span></div>
+
+</div>
+
+<!-- ACCOUNT 3 -->
+<div class="card">
+
+<div class="badge">🏛 PLATINUM CARD</div>
+
+<div class="section-title">DETAILS</div>
+
+<div class="row"><span class="label">Account Holder</span><span class="value">Ben Winans</span></div>
+<div class="row"><span class="label">Account Number</span><span class="value">889201770640</span></div>
+<div class="row"><span class="label">Routing Number</span><span class="value">599495940</span></div>
+<div class="row"><span class="label">Bank Name</span><span class="value">Axos Digital Bank</span></div>
+<div class="row"><span class="label">Country</span><span class="value">United States</span></div>
+
+</div>
+
+</div>
+
+</body>
+</html>

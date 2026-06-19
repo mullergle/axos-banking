@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Notifications | Axos</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:-apple-system,BlinkMacSystemFont,
+    "SF Pro Display",
+    "Helvetica Neue",
+    Arial,sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#03122d,#07204b,#0d3475);
+    color:white;
+    min-height:100vh;
+}
+
+body::before, body::after{
+    content:'';
+    position:fixed;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    filter:blur(120px);
+    z-index:-1;
+}
+
+body::before{ background:#1d6fff20; top:-250px; right:-250px; }
+body::after{ background:#00c6ff15; bottom:-220px; left:-220px; }
+
+.header{
+    padding:40px 8%;
+    position:relative;
+}
+
+.header h1{
+    font-size:45px;
+    font-weight:400;
+}
+
+.header p{
+    margin-top:8px;
+    color:#b6c9ea;
+}
+
+/* X button */
+.close-btn{
+    position:absolute;
+    top:40px;
+    right:8%;
+    width:50px;
+    height:50px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    color:white;
+    font-size:32px;
+    transition:.3s;
+}
+
+.close-btn:hover{
+    transform:rotate(90deg);
+}
+
+/* container */
+.container{
+    width:92%;
+    max-width:900px;
+    margin:auto;
+    margin-top:40px;
+}
+
+.card{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.1);
+    backdrop-filter:blur(25px);
+    border-radius:25px;
+    padding:20px;
+}
+
+/* item */
+.item{
+    padding:15px 18px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:15px;
+    margin-bottom:12px;
+}
+
+.title{
+    font-size:15px;
+    font-weight:500;
+}
+
+.desc{
+    font-size:13px;
+    color:#b7caeb;
+    margin-top:4px;
+}
+
+.time{
+    font-size:11px;
+    color:#8fb3e6;
+    margin-top:5px;
+}
+
+/* limit message */
+.limit{
+    text-align:center;
+    margin-top:15px;
+    padding:15px;
+    border-top:1px solid rgba(255,255,255,.1);
+    color:#ffcc66;
+    font-size:13px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <a href="menu.html" class="close-btn">×</a>
+    <h1>Notifications</h1>
+    <p>Bank alerts and updates</p>
+</div>
+
+<div class="container">
+
+<div class="card">
+
+    <div class="item">
+        <div class="title">Security Alert</div>
+        <div class="desc">New login detected from a verified device.</div>
+        <div class="time">Today</div>
+    </div>
+
+    <div class="item">
+        <div class="title">Salary Deposit</div>
+        <div class="desc">$50,000 has been credited to your account.</div>
+        <div class="time">Yesterday</div>
+    </div>
+
+    <div class="item">
+        <div class="title">Card Payment</div>
+        <div class="desc">Transaction of $240 approved successfully.</div>
+        <div class="time">2 days ago</div>
+    </div>
+
+    <div class="item">
+        <div class="title">Transfer Completed</div>
+        <div class="desc">Your transfer was successfully processed.</div>
+        <div class="time">3 days ago</div>
+    </div>
+
+    <div class="item">
+        <div class="title">Maintenance Notice</div>
+        <div class="desc">System maintenance scheduled this weekend.</div>
+        <div class="time">4 days ago</div>
+    </div>
+
+    <div class="item">
+        <div class="title">ATM Withdrawal</div>
+        <div class="desc">$120 withdrawal completed.</div>
+        <div class="time">5 days ago</div>
+    </div>
+
+    <div class="item">
+        <div class="title">New Feature</div>
+        <div class="desc">You can now track spending in real-time.</div>
+        <div class="time">1 week ago</div>
+    </div>
+
+    <div class="item">
+        <div class="title">Deposit Received</div>
+        <div class="desc">Funds received from external bank.</div>
+        <div class="time">1 week ago</div>
+    </div>
+
+    <div class="item">
+        <div class="title">Card Update</div>
+        <div class="desc">Your card settings were updated successfully.</div>
+        <div class="time">2 weeks ago</div>
+    </div>
+
+    
+    </div>
+
+    <!-- LIMIT MESSAGE -->
+    <div class="limit">
+        🚫 You have reached the maximum number of notifications.
+    </div>
+
+</div>
+
+</div>
+
+</body>
+</html>

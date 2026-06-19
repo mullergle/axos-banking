@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Personal Information | Axos</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:-apple-system,BlinkMacSystemFont,
+    "SF Pro Display",
+    "Helvetica Neue",
+    Arial,sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#03122d,#07204b,#0d3475);
+    color:white;
+    min-height:100vh;
+}
+
+/* Glow background */
+body::before{
+    content:'';
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#1d6fff20;
+    border-radius:50%;
+    top:-250px;
+    right:-250px;
+    filter:blur(120px);
+    z-index:-1;
+}
+
+body::after{
+    content:'';
+    position:fixed;
+    width:450px;
+    height:450px;
+    background:#00c6ff15;
+    border-radius:50%;
+    bottom:-220px;
+    left:-220px;
+    filter:blur(120px);
+    z-index:-1;
+}
+
+/* Header */
+.header{
+    padding:40px 8%;
+    position:relative;
+}
+
+.header h1{
+    font-size:45px;
+    font-weight:400;
+    letter-spacing:-1px;
+}
+
+.header p{
+    margin-top:8px;
+    color:#b6c9ea;
+}
+
+/* Back button */
+.close-btn{
+    position:absolute;
+    top:40px;
+    right:8%;
+
+    width:50px;
+    height:50px;
+
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.1);
+    backdrop-filter:blur(20px);
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-decoration:none;
+    color:white;
+    font-size:32px;
+
+    transition:.4s;
+}
+
+.close-btn:hover{
+    transform:rotate(90deg);
+}
+
+/* Container */
+.container{
+    width:92%;
+    max-width:900px;
+    margin:auto;
+    margin-top:40px;
+}
+
+/* Card */
+.card{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.1);
+    backdrop-filter:blur(25px);
+    border-radius:25px;
+    padding:30px;
+    box-shadow:0 20px 50px rgba(0,0,0,.3);
+}
+
+/* Profile section */
+.profile-top{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    margin-bottom:30px;
+}
+
+.avatar{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#4facfe,#00f2fe);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:30px;
+    font-weight:bold;
+    color:#00142e;
+}
+
+.name h2{
+    font-size:24px;
+    font-weight:500;
+}
+
+.name p{
+    color:#b7caeb;
+    margin-top:5px;
+}
+
+/* Info rows */
+.info{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:15px;
+}
+
+.row{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    padding:15px 18px;
+    border-radius:15px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.label{
+    color:#b7caeb;
+    font-size:14px;
+}
+
+.value{
+    font-weight:500;
+}
+
+/* Edit button */
+.edit-btn{
+    margin-top:25px;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:15px;
+    background:#1d6fff;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.edit-btn:hover{
+    background:#0f5cff;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+
+    <a href="menu.html" class="close-btn">×</a>
+
+    <h1>Personal Info</h1>
+    <p>Your account details and identity information</p>
+
+</div>
+
+<div class="container">
+
+    <div class="card">
+
+        <div class="profile-top">
+            <div class="avatar">BW</div>
+
+            <div class="name">
+                <h2>Ben Winans</h2>
+                <p>Verified Account</p>
+            </div>
+        </div>
+
+        <div class="info">
+
+            <div class="row">
+                <span class="label">Full Name</span>
+                <span class="value">Ben Winans</span>
+            </div>
+
+            <div class="row">
+                <span class="label">Email</span>
+                <span class="value">benwinans3@gmail.com</span>
+            </div>
+
+            <div class="row">
+                <span class="label">Phone</span>
+                <span class="value">+1 712-937-7008</span>
+            </div>
+
+            <div class="row">
+                <span class="label">Account ID</span>
+                <span class="value">AXS-00938421</span>
+            </div>
+
+            <div class="row">
+                <span class="label">Country</span>
+                <span class="value">United State Of America</span>
+            </div>
+
+        </div>
+
+        
+
+    </div>
+
+</div>
+
+</body>
+</html>

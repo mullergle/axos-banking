@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Log Out | Axos</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:-apple-system,BlinkMacSystemFont,
+    "SF Pro Display",
+    "Helvetica Neue",
+    Arial,sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#03122d,#07204b,#0d3475);
+    color:white;
+    min-height:100vh;
+}
+
+/* Glow */
+body::before{
+    content:'';
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#1d6fff20;
+    border-radius:50%;
+    top:-250px;
+    right:-250px;
+    filter:blur(120px);
+    z-index:-1;
+}
+
+body::after{
+    content:'';
+    position:fixed;
+    width:450px;
+    height:450px;
+    background:#00c6ff15;
+    border-radius:50%;
+    bottom:-220px;
+    left:-220px;
+    filter:blur(120px);
+    z-index:-1;
+}
+
+/* Header */
+.header{
+    padding:40px 8%;
+    position:relative;
+}
+
+.header h1{
+    font-size:45px;
+    font-weight:400;
+}
+
+.header p{
+    margin-top:8px;
+    color:#b6c9ea;
+}
+
+/* X button */
+.close-btn{
+    position:absolute;
+    top:40px;
+    right:8%;
+
+    width:50px;
+    height:50px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.1);
+    backdrop-filter:blur(20px);
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-decoration:none;
+    color:white;
+    font-size:32px;
+
+    transition:.4s;
+}
+
+.close-btn:hover{
+    transform:rotate(90deg);
+}
+
+/* container */
+.container{
+    width:92%;
+    max-width:900px;
+    margin:auto;
+    margin-top:60px;
+}
+
+/* card */
+.card{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.1);
+    backdrop-filter:blur(25px);
+    border-radius:25px;
+    padding:40px 25px;
+    text-align:center;
+}
+
+/* icon */
+.icon{
+    font-size:60px;
+    margin-bottom:15px;
+}
+
+/* text */
+.card h2{
+    font-size:24px;
+    font-weight:500;
+}
+
+.card p{
+    color:#b7caeb;
+    margin-top:10px;
+    font-size:14px;
+    line-height:1.6;
+}
+
+/* buttons */
+.btns{
+    margin-top:25px;
+    display:flex;
+    gap:15px;
+    justify-content:center;
+}
+
+.btn{
+    padding:12px 25px;
+    border-radius:12px;
+    border:none;
+    cursor:pointer;
+    font-size:15px;
+    transition:.3s;
+}
+
+.yes{
+    background:#ff4d4d;
+    color:white;
+}
+
+.yes:hover{
+    background:#e63c3c;
+}
+
+.no{
+    background:rgba(255,255,255,.1);
+    color:white;
+}
+
+.no:hover{
+    background:rgba(255,255,255,.2);
+}
+
+/* logout text */
+.logout-msg{
+    margin-top:20px;
+    color:#ffb3b3;
+    display:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+
+    <a href="menu.html" class="close-btn">×</a>
+
+    <h1>Log Out</h1>
+    <p>Secure session exit</p>
+
+</div>
+
+<div class="container">
+
+    <div class="card">
+
+        <div class="icon"></div>
+
+        <h2>You are about to log out</h2>
+
+        <p>Confirm if you want to leave your account session.</p>
+
+        <div class="btns">
+
+            <button class="btn yes" onclick="logout()">Yes</button>
+
+            <button class="btn no" onclick="cancelLogout()">No</button>
+
+        </div>
+
+        <div class="logout-msg" id="msg">
+            Logging out...
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+function logout(){
+    document.getElementById("msg").style.display = "block";
+
+    setTimeout(function(){
+        window.location.href = "index.html";
+    }, 2000);
+}
+
+function cancelLogout(){
+    window.location.href = "menu.html";
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>Deposit | Axos</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:-apple-system,BlinkMacSystemFont,
+    "SF Pro Display",
+    "Helvetica Neue",
+    Arial,sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#03122d,#07204b,#0d3475);
+    color:white;
+    min-height:100vh;
+    overflow:hidden;
+}
+
+/* Glow */
+body::before{
+    content:'';
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#1d6fff20;
+    border-radius:50%;
+    top:-250px;
+    right:-250px;
+    filter:blur(120px);
+    z-index:-1;
+}
+
+body::after{
+    content:'';
+    position:fixed;
+    width:450px;
+    height:450px;
+    background:#00c6ff15;
+    border-radius:50%;
+    bottom:-220px;
+    left:-220px;
+    filter:blur(120px);
+    z-index:-1;
+}
+
+/* Header */
+.header{
+    padding:40px 8%;
+    position:relative;
+}
+
+.header h1{
+    font-size:45px;
+    font-weight:400;
+}
+
+.header p{
+    margin-top:8px;
+    color:#b6c9ea;
+}
+
+/* Dashboard button */
+.close-btn{
+    position:absolute;
+    top:40px;
+    right:8%;
+
+    padding:10px 18px;
+
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.1);
+    backdrop-filter:blur(20px);
+    border-radius:12px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-decoration:none;
+    color:white;
+    font-size:14px;
+
+    transition:.3s;
+}
+
+.close-btn:hover{
+    background:rgba(255,255,255,.15);
+}
+
+/* container */
+.container{
+    width:92%;
+    max-width:900px;
+    margin:auto;
+    margin-top:40px;
+}
+
+/* card */
+.card{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.1);
+    backdrop-filter:blur(25px);
+    border-radius:25px;
+    padding:25px;
+    box-shadow:0 20px 50px rgba(0,0,0,.3);
+}
+
+/* info box */
+.info{
+    padding:20px;
+    border-radius:15px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.1);
+}
+
+/* row */
+.row{
+    display:flex;
+    justify-content:space-between;
+    padding:15px 0;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.row:last-child{
+    border-bottom:none;
+}
+
+.label{
+    color:#b7caeb;
+    font-size:14px;
+}
+
+.value{
+    font-weight:500;
+    letter-spacing:1px;
+    word-break:break-all;
+}
+
+/* title tag */
+.tag{
+    margin-bottom:20px;
+    font-size:14px;
+    color:#b7caeb;
+    letter-spacing:1px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+
+    <a href="dashboard.html" class="close-btn">X</a>
+
+    <h1>Deposit</h1>
+    <p>Your registered banking details</p>
+
+</div>
+
+<div class="container">
+
+    <div class="card">
+
+        <div class="tag">ACCOUNT INFORMATION</div>
+
+        <div class="info">
+
+            <div class="row">
+                <span class="label">Account Name</span>
+                <span class="value">Ben Winans</span>
+            </div>
+
+            <div class="row">
+                <span class="label">Bank Name</span>
+                <span class="value">Axos Digital Bank</span>
+            </div>
+
+            <div class="row">
+                <span class="label">Account Number</span>
+                <span class="value">607495268084</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Menu | Axos</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:-apple-system,BlinkMacSystemFont,
+    "SF Pro Display",
+    "Helvetica Neue",
+    Arial,sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#03122d,#07204b,#0d3475);
+    color:white;
+    min-height:100vh;
+}
+
+/* Background Glow */
+body::before{
+    content:'';
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#1d6fff20;
+    border-radius:50%;
+    top:-250px;
+    right:-250px;
+    filter:blur(120px);
+    z-index:-1;
+}
+
+body::after{
+    content:'';
+    position:fixed;
+    width:450px;
+    height:450px;
+    background:#00c6ff15;
+    border-radius:50%;
+    bottom:-220px;
+    left:-220px;
+    filter:blur(120px);
+    z-index:-1;
+}
+
+/* Header */
+.header{
+    padding:40px 8%;
+    position:relative;
+}
+
+.header h1{
+    font-size:55px;
+    font-weight:400;
+    letter-spacing:-2px;
+}
+
+.header p{
+    margin-top:10px;
+    color:#b6c9ea;
+}
+
+/* Close Button */
+.close-btn{
+    position:absolute;
+    top:40px;
+    right:8%;
+
+    width:50px;
+    height:50px;
+
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.1);
+    backdrop-filter:blur(20px);
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-decoration:none;
+    color:white;
+    font-size:32px;
+
+    transition:.4s;
+}
+
+.close-btn:hover{
+    transform:rotate(90deg);
+}
+
+/* Menu Container */
+.container{
+    width:92%;
+    max-width:900px;
+    margin:auto;
+}
+
+/* Menu Items */
+.item{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(25px);
+    border-radius:25px;
+    padding:28px;
+    margin-bottom:20px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    transition:.3s;
+
+    cursor:pointer;
+}
+
+.item:hover{
+    background:rgba(255,255,255,.08);
+    transform:translateX(8px);
+}
+
+.left{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.icon{
+    font-size:28px;
+}
+
+.text h2{
+    font-size:22px;
+    font-weight:500;
+}
+
+.text p{
+    color:#b7caeb;
+    margin-top:5px;
+    font-size:15px;
+}
+
+.arrow{
+    font-size:25px;
+    color:#7fb8ff;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+
+    <a href="dashboard.html" class="close-btn">×</a>
+
+    <h1>Menu</h1>
+    <p>Manage your profile, settings and banking services.</p>
+
+</div>
+
+<div class="container">
+
+    <!-- PROFILE -->
+    <div class="item" onclick="goToProfile()">
+        <div class="left">
+            <div class="icon">👤</div>
+            <div class="text">
+                <h2>Profile</h2>
+                <p>Personal information and preferences</p>
+            </div>
+        </div>
+        <div class="arrow">›</div>
+    </div>
+
+    <!-- NOTIFICATIONS -->
+    <div class="item" onclick="goToNotifications()">
+    <div class="left">
+        <div class="icon">🔔</div>
+        <div class="text">
+            <h2>Notifications</h2>
+            <p>Alerts and message preferences</p>
+        </div>
+    </div>
+    <div class="arrow">›</div>
+</div>
+
+    <!-- SETTINGS -->
+    <div class="item" onclick="goToSettings()">
+        <div class="left">
+            <div class="icon">⚙️</div>
+            <div class="text">
+                <h2>Settings</h2>
+                <p>Security and account options</p>
+            </div>
+        </div>
+        <div class="arrow">›</div>
+    </div>
+
+    
+
+    <!-- STATEMENTS -->
+    <div class="item" onclick="goToStatement()">
+        <div class="left">
+            <div class="icon">📊</div>
+            <div class="text">
+                <h2>Statements</h2>
+                <p>View account history</p>
+            </div>
+        </div>
+        <div class="arrow">›</div>
+    </div>
+
+    <!-- SECURITY -->
+    <div class="item" onclick="goToSecurity()">
+        <div class="left">
+            <div class="icon">🛡️</div>
+            <div class="text">
+                <h2>Security Center</h2>
+                <p>Password and account protection</p>
+            </div>
+        </div>
+        <div class="arrow">›</div>
+    </div>
+
+    <!-- HELP -->
+    <div class="item" onclick="goToHelp()">
+        <div class="left">
+            <div class="icon">❓</div>
+            <div class="text">
+                <h2>Help & Support</h2>
+                <p>Contact us and FAQs</p>
+            </div>
+        </div>
+        <div class="arrow">›</div>
+    </div>
+
+    <!-- AI SUPPORT -->
+    <div class="item" onclick="goToAi()">
+        <div class="left">
+            <div class="icon">🤖</div>
+            <div class="text">
+                <h2>Chat With Us</h2>
+                <p>Send an in-app chat</p>
+            </div>
+        </div>
+        <div class="arrow">›</div>
+    </div>
+ 
+     <!-- LOGOUT -->
+    <div class="item" onclick="goToLogout()">
+        <div class="left">
+            <div class="icon">🚪</div>
+            <div class="text">
+                <h2>Log Out</h2>
+                <p>Sign out of your account securely</p>
+            </div>
+        </div>
+        <div class="arrow">›</div>
+    </div>
+
+</div>
+
+<script>
+function goToProfile() {
+    window.location.href = "person.html";
+}
+
+function goToNotifications() {
+    window.location.href = "notification.html";
+}
+
+function goToSettings() {
+    window.location.href =
+"settings.html";
+}
+
+function goToStatement() {
+    window.location.href =
+"statement.html";
+}
+
+function goToSecurity() {
+    window.location.href =
+"security.html";
+}
+
+function goToHelp() {
+    window.location.href =
+"help.html";
+}
+
+function goToLogout() {
+    window.location.href =
+"logout.html";
+}
+
+function goToAi() {
+    window.location.href =
+"ai.html";
+}
+
+
+</script>
+
+</body>
+</html>

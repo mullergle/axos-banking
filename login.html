@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>Login | Axos</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:-apple-system,BlinkMacSystemFont,
+    "SF Pro Display",
+    "Helvetica Neue",
+    Arial,sans-serif;
+}
+
+/* prevent zoom feel on mobile */
+html, body{
+    touch-action: manipulation;
+    overflow: hidden;
+}
+
+body{
+    background:linear-gradient(135deg,#03122d,#07204b,#0d3475);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+}
+
+/* glow */
+body::before{
+    content:'';
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#1d6fff20;
+    border-radius:50%;
+    top:-250px;
+    right:-250px;
+    filter:blur(120px);
+    z-index:-1;
+}
+
+body::after{
+    content:'';
+    position:fixed;
+    width:450px;
+    height:450px;
+    background:#00c6ff15;
+    border-radius:50%;
+    bottom:-220px;
+    left:-220px;
+    filter:blur(120px);
+    z-index:-1;
+}
+
+/* box */
+.login-box{
+    width:90%;
+    max-width:420px;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.1);
+    backdrop-filter:blur(25px);
+    border-radius:25px;
+    padding:40px 25px;
+    text-align:center;
+}
+
+/* title */
+h1{
+    font-size:32px;
+    font-weight:400;
+    margin-bottom:10px;
+}
+
+p{
+    color:#b7caeb;
+    font-size:14px;
+    margin-bottom:25px;
+}
+
+/* inputs */
+input{
+    width:100%;
+    padding:14px;
+    margin-bottom:15px;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,.15);
+    background:rgba(0,0,0,.2);
+    color:white;
+    outline:none;
+}
+
+/* button */
+button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    background:#1d6fff;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#0f5cff;
+}
+
+/* error */
+.error{
+    color:#ff7b7b;
+    font-size:13px;
+    margin-top:10px;
+    display:none;
+}
+
+/* loading text */
+#loading{
+    display:none;
+    margin-top:10px;
+    font-size:14px;
+    color:#b7caeb;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="login-box">
+
+    <h1>Welcome Back</h1>
+    <p>Login to access your account</p>
+
+    <input type="text" id="email" placeholder="Email Address">
+    <input type="password" id="password" placeholder="Password">
+
+    <button onclick="login()">Login</button>
+
+    <div class="error" id="error"></div>
+    <div id="loading">Logging in...</div>
+
+</div>
+
+<script>
+
+
+
+function login(){
+
+    let email = document.getElementById("email").value.trim();
+    let password = document.getElementById("password").value.trim();
+
+    let error = document.getElementById("error");
+    let loading = document.getElementById("loading");
+
+
+    // empty check
+    if(email === "" || password === ""){
+        error.style.display = "block";
+        error.innerText = "Please fill all fields";
+        return;
+    }
+
+
+    // HARD CODED LOGIN
+    if(email === "muller@gmail.com" && password === "12345"){
+
+        error.style.display = "none";
+        loading.style.display = "block";
+
+
+        setTimeout(function(){
+
+            window.location.href = "dashboard.html";
+
+        },2000);
+
+
+    }else{
+
+        error.style.display = "block";
+        error.innerText = "Invalid login details";
+
+    }
+
+}
+
+
+
+</script>
+
+</body>
+</html>

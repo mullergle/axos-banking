@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Explore | Axos</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:-apple-system,BlinkMacSystemFont,
+    "SF Pro Display",
+    "Helvetica Neue",
+    Arial,sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#03122d,#07204b,#0d3475);
+    color:white;
+    min-height:100vh;
+}
+
+/* Header */
+
+.header{
+    padding:40px 8% 20px;
+    position:relative;
+}
+
+.close-btn{
+    position:absolute;
+    right:8%;
+    top:40px;
+
+    width:50px;
+    height:50px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    backdrop-filter:blur(20px);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:30px;
+
+    transition:.3s;
+}
+
+.close-btn:hover{
+    background:rgba(255,255,255,.15);
+    transform:rotate(90deg);
+}
+
+.header h1{
+    font-size:55px;
+    font-weight:400;
+    letter-spacing:-2px;
+}
+
+.header p{
+    color:#a9c3f1;
+    margin-top:10px;
+    font-size:18px;
+}
+
+/* Container */
+
+.container{
+    width:92%;
+    max-width:1000px;
+    margin:auto;
+}
+
+/* Featured Banner */
+
+.feature{
+    background:linear-gradient(45deg,#1d6fff,#00c6ff);
+    border-radius:30px;
+    padding:40px;
+    margin-bottom:25px;
+}
+
+.feature h2{
+    font-size:35px;
+    font-weight:500;
+}
+
+.feature p{
+    margin-top:15px;
+    line-height:1.8;
+}
+
+/* Cards */
+
+.card{
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:28px;
+
+    padding:30px;
+
+    margin-bottom:25px;
+
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.icon{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.card h2{
+    font-size:28px;
+    font-weight:500;
+    margin-bottom:12px;
+}
+
+.card p{
+    color:#c7d8f8;
+    line-height:1.7;
+}
+
+.card a{
+    display:inline-block;
+    margin-top:20px;
+    color:#4db2ff;
+    text-decoration:none;
+}
+
+/* Bottom Navigation */
+
+.bottom-nav{
+    position:fixed;
+    bottom:15px;
+    left:50%;
+    transform:translateX(-50%);
+
+    width:92%;
+    max-width:700px;
+
+    height:80px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(25px);
+
+    border-radius:30px;
+
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+}
+
+.bottom-nav a{
+    color:white;
+    text-decoration:none;
+    font-size:15px;
+}
+
+.active{
+    color:#53bcff;
+}
+
+</style>
+</head>
+<body>
+
+<div class="header">
+
+<a href="dashboard.html" class="close-btn">
+×
+</a>
+
+<h1>Explore</h1>
+
+<p>
+Discover products, rewards and tools designed for your future.
+</p>
+
+</div>
+
+<div class="container">
+
+<div class="feature">
+
+<h2>
+Earn up to 4.21% APY
+</h2>
+
+<p>
+Grow your money faster with Axos ONE® high-yield savings and premium checking benefits.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon">💳</div>
+
+<h2>Credit Cards</h2>
+
+<p>
+Explore cashback, travel and premium credit card options built around your lifestyle.
+</p>
+
+
+
+</div>
+
+<div class="card">
+
+<div class="icon">📈</div>
+
+<h2>Investments</h2>
+
+<p>
+Build long-term wealth with personalized investing solutions and retirement accounts.
+</p>
+
+
+
+</div>
+
+<div class="card">
+
+<div class="icon">🏠</div>
+
+<h2>Home Loans</h2>
+
+<p>
+Purchase or refinance your dream home with flexible mortgage solutions.
+</p>
+
+
+
+</div>
+
+<div class="card">
+
+<div class="icon">🎁</div>
+
+<h2>Rewards Center</h2>
+
+<p>
+Track cash rewards and unlock exclusive member benefits.
+</p>
+
+
+
+</div>
+
+<div class="card">
+
+<div class="icon">📚</div>
+
+<h2>Financial Education</h2>
+
+<p>
+Learn about saving, investing, budgeting and planning for retirement.
+</p>
+
+
+</div>
+
+</div>
+
+
+
+</div>
+
+</body>
+</html>
